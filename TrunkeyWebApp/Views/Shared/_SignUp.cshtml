@@ -1,0 +1,52 @@
+﻿@model TrunkeyWebApp.Models.ViewNguoiDungDangKy
+
+<button type="button" class="custom-btn btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#signUpModal">
+	Đăng Ký
+</button>
+
+<!-- Modal -->
+<div class="modal fade custom-modal-01" id="signUpModal" tabindex="-1" aria-labelledby="SignUpModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<h3 class="text-center mt-3">Đăng Ký</h3>
+				@using (Html.BeginForm("SignUp", "NguoiDungs", FormMethod.Post))
+				{
+					<form>
+						@if (ViewData["SignUp"] != null)
+						{
+							<div asp-validation-summary="All" class="custom-error-dialog text-white fw-bold bg-danger my-3"></div>
+						}
+						<div class="mb-3">
+							<label for="exampleInputEmail1" class="form-label" asp-for="TaiKhoan">Tài Khoản</label>
+							<input minlength="3" maxlength="20" asp-for="TaiKhoan" class="form-control" id="exampleInputTaiKhoan1" aria-describedby="emailHelp" required>
+							<div id="emailHelp" class="form-text">We'll never share your account information with anyone else.</div>
+						</div>
+						<div class="mb-3">
+							<label for="exampleInputPassword1" class="form-label" asp-for="MatKhau">Mật Khẩu</label>
+							<input minlength="3" maxlength="20" type="password" asp-for="MatKhau" class="form-control" id="exampleInputPassword1" required>
+						</div>
+						<div class="mb-3">
+							<label for="exampleInputPassword1" class="form-label" asp-for="NhapLaiMatKhau">Nhập Lại Mật Khẩu</label>
+							<input minlength="3" maxlength="20" type="password" asp-for="NhapLaiMatKhau" class="form-control" id="exampleInputPassword1" required>
+						</div>
+						<div class="mb-3 form-check">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">Auto Login After Sign Up</label>
+						</div>
+						<div class="d-flex justify-content-center">
+							<button type="submit" class="btn btn-primary custom-button-01">Sign Up</button>
+						</div>
+					</form>
+				}
+			</div>
+		</div>
+	</div>
+</div>
+
+@section Scripts{
+@{
+	<partial name="_ValidationScriptsPartial" />
+}
+}
+

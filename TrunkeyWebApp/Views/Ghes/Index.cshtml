@@ -1,0 +1,65 @@
+﻿@model IEnumerable<TrunkeyWebApp.Models.Ghe>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MaGhe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SttGhe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoaiGhe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DaDat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaLichChieuNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaiKhoanNguoiDatNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaGhe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SttGhe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoaiGhe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DaDat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaLichChieuNavigation.MaLichChieu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaiKhoanNguoiDatNavigation.TaiKhoan)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MaGhe">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MaGhe">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MaGhe">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

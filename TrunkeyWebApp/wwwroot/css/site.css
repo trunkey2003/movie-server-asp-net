@@ -1,0 +1,119 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+custom-error-dialog {
+    background: white;
+}
+
+ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.custom-text:hover {
+    background: rgb(230, 230, 230);
+    color: rgb(25, 198, 229) !important;
+}
+
+
+.custom-modal-01 .modal-content {
+    margin-top: 30vh;
+    background: linear-gradient(0deg, rgb(27, 134, 136) 0%, rgb(32, 55, 168) 100%);
+    color: white;
+}
+
+.custom-button-01 {
+    background: rgb(2,0,36);
+    background: linear-gradient(197deg, rgba(2,0,36,1) 0%, rgba(78,28,228,1) 0%, rgba(43,62,69,1) 96%);
+    color: white;
+    width: 50%;
+}
+
+    .custom-button-01:hover {
+        cursor: pointer;
+        background: rgb(2,0,36);
+        background: linear-gradient(197deg, rgba(2,0,36,1) 0%, rgba(44,22,110,1) 0%, rgba(43,62,69,1) 96%);
+    }
+
+@media (max-width: 800px) {
+    .custom-alert-01 {
+        position: fixed;
+        bottom: 10vh;
+        height: 10vh;
+        line-height: 5vh;
+        background: rgb(2,0,36);
+        background: linear-gradient(197deg, rgba(2,0,36,1) 0%, rgba(36,160,219,1) 0%, rgba(43,62,69,1) 96%);
+        border-radius: 1rem;
+        color: white;
+    }
+
+        .custom-alert-01 p {
+            margin: 0;
+            text-align: start;
+            line-height: 16px;
+        }
+}
+
+@media (min-width: 801.1px) {
+    .custom-alert-01 {
+        position: fixed;
+        top: 8vh;
+        right: 1vw;
+        background: rgb(2,0,36);
+        background: linear-gradient(197deg, rgba(2,0,36,1) 0%, rgba(36,160,219,1) 0%, rgba(43,62,69,1) 96%);
+        border-radius: 1rem;
+        color: white;
+    }
+
+        .custom-alert-01 p {
+            margin: 0;
+            text-align: start;
+            line-height: 16px;
+        }
+}
+
+.custom-btn {
+    background: rgb(2,0,36);
+    background: linear-gradient(197deg, rgba(2,0,36,1) 0%, rgba(36,160,219,1) 0%, rgba(43,62,69,1) 96%);
+    color: white;
+}
+
+    .custom-btn:hover {
+        background: rgb(2,0,36);
+        background: linear-gradient(197deg, rgba(2,0,36,1) 0%, rgba(5,33,46,1) 0%, rgba(43,62,69,1) 96%);
+        color: white;
+    }
+
+.custom-identity {
+    background: black;
+    color: white;
+}
+
+    .custom-identity:hover {
+        cursor: default;
+        color: white;
+    }
+
+    .custom-identity a {
+        color: white;
+    }
+
+        .custom-identity a:hover {
+            color: gray;
+        }

@@ -1,0 +1,65 @@
+﻿@model IEnumerable<TrunkeyWebApp.Models.Phim>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table" style="position : absolute; top : 20vh; left : 0">
+    <thead>
+        <tr>
+            <th style="width:12.5%">
+                @Html.DisplayNameFor(model => model.TenPhim)
+            </th>
+            <th style="width:12.5%">
+                @Html.DisplayNameFor(model => model.Trailer)
+            </th>
+            <th style="width:12.5%">
+                @Html.DisplayNameFor(model => model.HinhAnh)
+            </th>
+            <th style="width:12.5%">
+                @Html.DisplayNameFor(model => model.MoTa)
+            </th>
+            <th style="width:12.5%">
+                @Html.DisplayNameFor(model => model.NgayKhoiChieu)
+            </th>
+            <th style="width:12.5%">
+                @Html.DisplayNameFor(model => model.DanhGia)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td style="width:12.5%">
+                @Html.DisplayFor(modelItem => item.TenPhim)
+            </td>
+            <td style="width:12.5%">
+                @Html.DisplayFor(modelItem => item.Trailer)
+            </td>
+            <td style="width:12.5%">
+                @Html.DisplayFor(modelItem => item.HinhAnh)
+            </td>
+            <td style="width:12.5%">
+                @Html.DisplayFor(modelItem => item.MoTa)
+            </td>
+            <td style="width:12.5%">
+                @Html.DisplayFor(modelItem => item.NgayKhoiChieu)
+            </td>
+            <td style="width:12.5%">
+                @Html.DisplayFor(modelItem => item.DanhGia)
+            </td>
+            <td style="width:12.5%">
+                <a asp-action="Edit" asp-route-id="@item.MaPhim">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MaPhim">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MaPhim">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
