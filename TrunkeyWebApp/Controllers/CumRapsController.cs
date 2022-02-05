@@ -12,10 +12,10 @@ namespace TrunkeyWebApp.Controllers
 {
     public class CumRapsController : Controller
     {
-        private readonly movie_server_cybersoftContext _context;
+        private readonly movieContext _context;
         private readonly Middlewares.IAuthorization _Authorization;
 
-        public CumRapsController(movie_server_cybersoftContext context, Middlewares.IAuthorization Authorization)
+        public CumRapsController(movieContext context, Middlewares.IAuthorization Authorization)
         {
             _context = context;
             _Authorization = Authorization;
@@ -25,8 +25,8 @@ namespace TrunkeyWebApp.Controllers
         public async Task<IActionResult> Index()
         {
             _Authorization.IdentifyUser(Request, ViewData);
-            var movie_server_cybersoftContext = _context.CumRaps.Include(c => c.MaHeThongRapNavigation);
-            return View(await movie_server_cybersoftContext.ToListAsync());
+            var movieContext = _context.CumRaps.Include(c => c.MaHeThongRapNavigation);
+            return View(await movieContext.ToListAsync());
         }
 
         // GET: CumRaps/Details/5

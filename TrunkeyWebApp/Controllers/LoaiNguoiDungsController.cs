@@ -12,10 +12,10 @@ namespace TrunkeyWebApp.Controllers
 {
     public class LoaiNguoiDungsController : Controller
     {
-        private readonly movie_server_cybersoftContext _context;
+        private readonly movieContext _context;
         private readonly Middlewares.IAuthorization _Authorization;
 
-        public LoaiNguoiDungsController(movie_server_cybersoftContext context, Middlewares.IAuthorization Authorization)
+        public LoaiNguoiDungsController(movieContext context, Middlewares.IAuthorization Authorization)
         {
             _context = context;
             _Authorization = Authorization;

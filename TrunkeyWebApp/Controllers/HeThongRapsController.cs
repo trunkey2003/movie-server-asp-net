@@ -12,10 +12,10 @@ namespace TrunkeyWebApp.Controllers
 {
     public class HeThongRapsController : Controller
     {
-        private readonly movie_server_cybersoftContext _context;
+        private readonly movieContext _context;
         private readonly Middlewares.IAuthorization _Authorization;
 
-        public HeThongRapsController(movie_server_cybersoftContext context, Middlewares.IAuthorization Authorization)
+        public HeThongRapsController(movieContext context, Middlewares.IAuthorization Authorization)
         {
             _context = context;
             _Authorization = Authorization;

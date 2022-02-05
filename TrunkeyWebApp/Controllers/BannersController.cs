@@ -1,12 +1,5 @@
 ﻿#nullable disable
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using JWT;
-using JWT.Algorithms;
-using JWT.Exceptions;
-using JWT.Serializers;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -16,11 +9,11 @@ namespace TrunkeyWebApp.Controllers
 {
     public class BannersController : Controller
     {
-        private readonly movie_server_cybersoftContext _context;
+        private readonly movieContext _context;
         private readonly Middlewares.ICookiesAction _cookiesAction;
         private readonly Middlewares.IAuthorization _Authorization;
 
-        public BannersController(movie_server_cybersoftContext context, Middlewares.ICookiesAction cookiesAction, Middlewares.IAuthorization Authorization)
+        public BannersController(movieContext context, Middlewares.ICookiesAction cookiesAction, Middlewares.IAuthorization Authorization)
         {
             _context = context;
             _cookiesAction = cookiesAction;
@@ -31,8 +24,8 @@ namespace TrunkeyWebApp.Controllers
         public async Task<IActionResult> Index()
         {
             _Authorization.IdentifyUser(Request, ViewData);
-            var movie_server_cybersoftContext = _context.Banners;
-            return View(await movie_server_cybersoftContext.ToListAsync());
+            var movieContext = _context.Banners;
+            return View(await movieContext.ToListAsync());
         }
   
         // GET: Banners/Details/5

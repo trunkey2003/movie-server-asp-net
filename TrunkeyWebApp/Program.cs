@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<movie_server_cybersoftContext>(options => options.UseMySQL(Environment.GetEnvironmentVariable("CONNECTION_STRING")));
+builder.Services.AddDbContext<movieContext>(options => options.UseMySQL(Environment.GetEnvironmentVariable("CONNECTION_STRING")));
 builder.Services.AddControllers().AddJsonOptions(x =>
                 { x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles; x.JsonSerializerOptions.WriteIndented = true; });
 builder.Services.AddTransient<TrunkeyWebApp.Middlewares.ICookiesAction, TrunkeyWebApp.Middlewares.CookiesAction>();

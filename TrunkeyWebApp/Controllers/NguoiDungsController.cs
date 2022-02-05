@@ -11,12 +11,12 @@ namespace TrunkeyWebApp.Controllers
 {
     public class NguoiDungsController : Controller
     {
-        private readonly movie_server_cybersoftContext _context;
+        private readonly movieContext _context;
         private readonly Middlewares.ICookiesAction _cookiesAction;
         private readonly Middlewares.IAuthorization _Authorization;
 
 
-        public NguoiDungsController(movie_server_cybersoftContext context, Middlewares.ICookiesAction cookiesAction, Middlewares.IAuthorization Authorization)
+        public NguoiDungsController(movieContext context, Middlewares.ICookiesAction cookiesAction, Middlewares.IAuthorization Authorization)
         {
             _context = context;
             _cookiesAction = cookiesAction;
@@ -99,14 +99,14 @@ namespace TrunkeyWebApp.Controllers
         {
             _Authorization.IdentifyUser(Request, ViewData);
             if (!_Authorization.AuthorizationAdmin(Request)) return View("~/Views/_AuthorizationError.cshtml");
-            var movie_server_cybersoftContext = _context.NguoiDungs.Include(n => n.MaLoaiNguoiDungNavigation);
-            var res = await movie_server_cybersoftContext.ToListAsync();
+            var movieContext = _context.NguoiDungs.Include(n => n.MaLoaiNguoiDungNavigation);
+            var res = await movieContext.ToListAsync();
             var TaiKhoan = _Authorization.GetUserName(Request);
             foreach (var item in res)
             {
                 if (item.TaiKhoan != TaiKhoan) item.MatKhau = "*********";
             }
-            return View(await movie_server_cybersoftContext.ToListAsync());
+            return View(await movieContext.ToListAsync());
         }
 
         // GET: NguoiDungs/Details/5

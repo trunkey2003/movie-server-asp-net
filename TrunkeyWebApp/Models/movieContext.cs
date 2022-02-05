@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace TrunkeyWebApp.Models
 {
-    public partial class movie_server_cybersoftContext : DbContext
+    public partial class movieContext : DbContext
     {
-        public movie_server_cybersoftContext()
+        public movieContext()
         {
         }
 
-        public movie_server_cybersoftContext(DbContextOptions<movie_server_cybersoftContext> options)
+        public movieContext(DbContextOptions<movieContext> options)
             : base(options)
         {
         }
